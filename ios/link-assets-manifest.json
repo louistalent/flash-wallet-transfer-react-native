@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/logo_dark.svg",
+      "sha1": "165d94fdddf74702926b9de0be9d3cbdb8a67709"
+    },
+    {
+      "path": "assets/logo_light.svg",
+      "sha1": "cc2ef9d5446374868bf61920628614bb55417c4f"
+    },
+    {
+      "path": "assets/splash.png",
+      "sha1": "d01e4e3fe4738abde26ef40684aa1a26c9f095c8"
+    },
+    {
+      "path": "assets/splash.svg",
+      "sha1": "ed4863d9ba91589c71a5d0097eceaf9dfedb8b53"
+    }
+  ]
+}
