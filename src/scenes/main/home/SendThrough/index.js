@@ -6,8 +6,6 @@ import MenuIcon from '../../../../../assets/menu.svg';
 import RingIcon from '../../../../../assets/ring.svg';
 import SwapIcon from '../../../../../assets/swap.svg';
 import { hScaleRatio, wScale } from '../../../../utils/scailing';
-import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
-import colors from '../../../../theme/colors';
 import { ScrollView } from 'react-native-gesture-handler';
 import RecentTransactions from '../../../../components/RecentTransactions';
 import BackButton from '../../../../components/BackButton';
@@ -26,6 +24,9 @@ const SendThrough = props => {
     const [cardSelected, setCardSelected] = useState(false);
     const [bankSelected, setBankSelected] = useState(false);
 
+    const [receiverCashSelected, setReceiverCashSelected] = useState(true);
+    const [receiverBankSelected, setReceiverBankSelected] = useState(false);
+
 
     const onPressAddNew = () => {
         setAddNew(true);
@@ -41,6 +42,17 @@ const SendThrough = props => {
 
     const onPressContinue = () => {
         props.navigation.navigate('PaymentDetail');
+    }
+
+    const onUpdateReceiverState = (mode, selected) => {
+        setReceiverCashSelected(false);
+        setReceiverBankSelected(false);
+
+        if (mode == paymentMode.cash) {
+            selected == true ? setReceiverCashSelected(false) : setReceiverCashSelected(true)
+        }
+        else
+            selected == true ? setReceiverBankSelected(false) : setReceiverBankSelected(true)
     }
 
     const onUpdateState = (mode, selected) => {
@@ -93,8 +105,8 @@ const SendThrough = props => {
                     How does your receiver want money?
                 </Text>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <PaymentOption mode={paymentMode.cash} width={158} height={90} />
-                    <PaymentOption mode={paymentMode.bank} width={158} height={90} />
+                    <PaymentOption mode={paymentMode.cash} width={158} height={90} onPress={onUpdateReceiverState} selected={receiverCashSelected} />
+                    <PaymentOption mode={paymentMode.bank} width={158} height={90} onPress={onUpdateReceiverState} selected={receiverBankSelected} />
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <TouchableOpacity style={addNew ? styles.btnAddNew : styles.btnAddFrom} onPress={onPressAddNew}>

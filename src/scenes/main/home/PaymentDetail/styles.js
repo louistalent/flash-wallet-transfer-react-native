@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
         fontFamily: "Inter",
         fontSize: 16,
         fontWeight: "500",
-        lineHeight: 24,
         textAlign: 'center',
         color: colors.radioBtnColor
     },
@@ -95,7 +94,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(93, 95, 239, 0.1)',
         justifyContent: 'space-around',
         alignItems: 'center',
-        padding: 20
     }
 
 }

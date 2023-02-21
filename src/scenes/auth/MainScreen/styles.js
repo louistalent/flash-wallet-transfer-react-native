@@ -1,16 +1,19 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../../theme/colors';
-import { hScaleRatio } from '../../../utils/scailing';
+import { hScaleRatio, wScale } from '../../../utils/scailing';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.bla_black,
-    flexDirection: 'column',
-    alignItems: 'center',
-    flex: 1
+    flex: 1,
+    padding: wScale(20)
   },
-  tabBar: {
-    height: hScaleRatio(40)
+  title: {
+    fontWeight: '700',
+    fontSize: 20,
+    color: 'black'
+  },
+  lineStyle: {
+
   }
 });
 
